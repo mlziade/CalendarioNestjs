@@ -9,7 +9,7 @@ import { ConfigModule } from '@nestjs/config';
     EventsModule, 
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['.dev.env']
+      envFilePath: ['.env']
     })
   ],
   controllers: [AppController],
