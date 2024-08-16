@@ -1,9 +1,17 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { EventsModule } from './events/events.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [
+    EventsModule, 
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: ['.dev.env']
+    })
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
